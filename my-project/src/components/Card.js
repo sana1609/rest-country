@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CountryCard = (props) =>{
     return (
         <div className="max-w-xs pb-8 shadow-md rounded">
@@ -11,7 +12,7 @@ const CountryCard = (props) =>{
             </div>
             <div>
                 <ul className="px-6 py-1">
-                    <li className="text-sm"><span className="font-semibold text-sm">Poplulation</span>: {props.plopulation}</li>
+                    <li className="text-sm"><span className="font-semibold text-sm">Population</span>: {props.population}</li>
                     <li className="text-sm"><span className="font-semibold medium text-sm">Region</span>: {props.region}</li>
                     <li className="text-sm"><span className="font-semibold medium text-sm">Capital</span>: {props.capital}</li>
                 </ul>
