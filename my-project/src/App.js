@@ -5,6 +5,8 @@ import SearchBar from './components/Search';
 import FilterBox from './components/Filter';
 import NavBar from './components/Nav';
 import DetailPage from './components/CardDetails';
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,6 +30,7 @@ function App() {
 const Home = () => {
 
   const [country, setCountry] = useState([]);
+  const [term, setTerm] = useState('');
 
   useEffect(() => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -42,14 +45,16 @@ const Home = () => {
     <div className="mx-auto">
       <div className = "flex flex-row justify-between items-center container mx-auto">
         <div>
-          <SearchBar />
+          <SearchBar 
+            handleChange = {e => setTerm(e.target.value)}
+          />
         </div>
         <div className= "order-last">
           <FilterBox />
         </div>
       </div>
       <div className="grid grid-cols-4 gap-6 container mx-auto">
-      {country.map(item => (
+      {country.filter(item => (item.name.toLowerCase().includes(term))).map(item => (
           <Link to="/details" >
             <CountryCard key = {item.alpha3Code} {...item}/>
           </Link>

@@ -1,20 +1,19 @@
 import React from 'react';
 
-
-const CountryCard = (props) =>{
+const CountryCard = (items) =>{
     return (
         <div className="max-w-xs pb-8 shadow-md rounded">
             <div>
-                <img className="w-full" src={props.flag}></img>
+                <img className="w-full" src={items.flag}></img>
             </div>
             <div>
-                <h3 className="px-6 py-3 font-bold text-1xl">{props.name}</h3>
+                <h3 className="px-6 py-3 font-bold text-1xl">{items.name}</h3>
             </div>
             <div>
                 <ul className="px-6 py-1">
-                    <li className="text-sm"><span className="font-semibold text-sm">Population</span>: {props.population}</li>
-                    <li className="text-sm"><span className="font-semibold medium text-sm">Region</span>: {props.region}</li>
-                    <li className="text-sm"><span className="font-semibold medium text-sm">Capital</span>: {props.capital}</li>
+                    <li className="text-sm"><span className="font-semibold text-sm">Population</span>: {items.population}</li>
+                    <li className="text-sm"><span className="font-semibold medium text-sm">Region</span>: {items.region}</li>
+                    <li className="text-sm"><span className="font-semibold medium text-sm">Capital</span>: {items.capital}</li>
                 </ul>
             </div>
         </div>
