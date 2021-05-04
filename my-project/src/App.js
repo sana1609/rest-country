@@ -31,6 +31,7 @@ const Home = () => {
 
   const [country, setCountry] = useState([]);
   const [term, setTerm] = useState('');
+  const [filterValue, setValue] = useState('');
 
   useEffect(() => {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -50,13 +51,15 @@ const Home = () => {
           />
         </div>
         <div className= "order-last">
-          <FilterBox />
+          <FilterBox selectValue = {e => setValue(e.target.value)}/>
         </div>
       </div>
       <div className="grid grid-cols-4 gap-6 container mx-auto">
-      {country.filter(item => (item.name.toLowerCase().includes(term))).map(item => (
+      {country.filter(item => item.region.includes(filterValue))
+      .filter(item => (item.name.toLowerCase().includes(term)))
+      .map(item => (
           <Link to="/details" >
-            <CountryCard key = {item.alpha3Code} {...item}/>
+            <CountryCard key = {item.numericCode} {...item}/>
           </Link>
       ))}
       </div>
