@@ -1,15 +1,15 @@
 import React from "react";
-import { FiMoon } from "react-icons/fi";
+import Toggle from './toggle';
 
 const NavBar = () => {
     return (
-        <nav className = "bg-wihite w-full shadow-md">
+        <nav className = "bg-wihite w-full shadow-md bg-primary">
             <div className="container mx-auto flex flex-row justify-between items-center">
             <div>
-                <h1 className="text-xl font-semibold">Where in the world?</h1>
+                <h1 className="text-xl font-semibold text-primary">Where in the world?</h1>
             </div>
             <div>
-                <FiMoon size = "1.5rem" color="grey" style = {{ margin: "1rem", display:"inline"}}/><span>Dark Mode</span>
+              <Toggle />
             </div> 
             </div>
         </nav>

@@ -5,7 +5,7 @@ import SearchBar from './components/Search';
 import FilterBox from './components/Filter';
 import NavBar from './components/Nav';
 import DetailPage from './components/CardDetails';
-
+import { ThemeProvider } from './ThemeContext';
 
 import {
   BrowserRouter as Router,
@@ -16,13 +16,15 @@ import {
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route path="/" exact component = {Home}></Route>
-        <Route path="/details" component = {DetailPage}></Route>
-      </Switch>
-    </Router>
+    <ThemeProvider >
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component = {Home}></Route>
+          <Route path="/details" component = {DetailPage}></Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
@@ -43,7 +45,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto bg-secondary">
       <div className = "flex flex-row justify-between items-center container mx-auto">
         <div>
           <SearchBar 
@@ -58,7 +60,7 @@ const Home = () => {
       {country.filter(item => item.region.includes(filterValue))
       .filter(item => (item.name.toLowerCase().includes(term)))
       .map(item => (
-          <Link to="/details" >
+          <Link to={`/details/${item.numericCode}`} >
             <CountryCard key = {item.numericCode} {...item}/>
           </Link>
       ))}
