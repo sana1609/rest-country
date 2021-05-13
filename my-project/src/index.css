@@ -8,14 +8,12 @@
     --color-bg-primary: hsl(209, 23%, 22%);
     --color-bg-secondary: hsl(207, 26%, 17%);
     --color-text-primary: hsl(0, 0%, 100%);
-    /* --color-text-accent: #81e6d9; */
 }
 
 .light {
     --color-bg-secondary: hsl(0, 0%, 98%);
     --color-bg-primary:  hsl(0, 0%, 100%);
     --color-text-primary:  hsl(200, 15%, 8%);
-    /* --color-text-accent: #2b6cb0; */
 }
 
 @tailwind base;

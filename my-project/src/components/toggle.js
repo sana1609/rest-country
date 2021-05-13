@@ -7,12 +7,12 @@ const Toggle = () => {
     const {theme, setTheme} = useContext(ThemeContext);
 
     function isDark() {
-        return theme === "dark"
+      return theme === "dark"
     }
 
     return (
         <label>
-          <input
+          <input className='hidden'
             type="checkbox"
             checked={isDark()}
             onChange={e => setTheme(e.target.checked ? "dark" : "light")}

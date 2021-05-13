@@ -4,8 +4,8 @@ import CountryCard from './components/Card';
 import SearchBar from './components/Search';
 import FilterBox from './components/Filter';
 import NavBar from './components/Nav';
-import DetailPage from './components/CardDetails';
 import { ThemeProvider } from './ThemeContext';
+import DetailPage from './components/DetailsPage';
 
 import {
   BrowserRouter as Router,
@@ -21,18 +21,18 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component = {Home}></Route>
-          <Route path="/details" component = {DetailPage}></Route>
+          <Route path="/details/:alpha3Code" component = {DetailPage}></Route>
         </Switch>
       </Router>
     </ThemeProvider>
   );
 }
 
-
 const Home = () => {
 
   const [country, setCountry] = useState([]);
   const [term, setTerm] = useState('');
+
   const [filterValue, setValue] = useState('');
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const Home = () => {
       {country.filter(item => item.region.includes(filterValue))
       .filter(item => (item.name.toLowerCase().includes(term)))
       .map(item => (
-          <Link to={`/details/${item.numericCode}`} >
+          <Link to={`/details/${item.alpha3Code}`} >
             <CountryCard key = {item.numericCode} {...item}/>
           </Link>
       ))}
