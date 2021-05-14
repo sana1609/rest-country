@@ -9,7 +9,7 @@ const DetailPage = () => {
     let { alpha3Code } = useParams();
     console.log(alpha3Code);
 
-    const [countryDetail, setCountryDetail] = useState(null);
+    const [countryDetail, setCountryDetail] = useState({});
 
     useEffect(() => {
         fetch(`https://restcountries.eu/rest/v2/alpha/${alpha3Code}`)
@@ -27,7 +27,7 @@ const DetailPage = () => {
     
     return (
         <>
-            {countryDetail ? (<CardDetails  countryInfo = {countryDetail} />) : (<div>Loding..</div>)}
+            {countryDetail ? (<CardDetails  countryInfo = {countryDetail} />) : (<div>Loding...</div>)}
         </>
     );
 }

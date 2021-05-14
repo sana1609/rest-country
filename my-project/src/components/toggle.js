@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import { ThemeContext } from '../ThemeContext';
-import { FiMoon } from "react-icons/fi";
+import { FaMoon } from "react-icons/fa";
 
 const Toggle = () => {
 
@@ -17,7 +17,7 @@ const Toggle = () => {
             checked={isDark()}
             onChange={e => setTheme(e.target.checked ? "dark" : "light")}
           ></input>
-            <FiMoon size = "1.5rem" color="grey" style = {{ margin: "1rem", display:"inline"}}/><span className = "text-primary">Dark Mode</span>
+            <FaMoon size = "1.5rem" color="grey" style = {{ margin: "1rem", display:"inline"}}/><span className = "text-primary">Dark Mode</span>
         </label>
     )
 }
