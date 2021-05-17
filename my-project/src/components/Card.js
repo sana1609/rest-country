@@ -2,7 +2,7 @@ import React from 'react';
 
 const CountryCard = (items) =>{
     return (
-        <div className="max-w-xs pb-8 shadow-md rounded bg-primary">
+        <div className="max-w-xs h-full m-2 pb-8 shadow-md rounded bg-primary">
             <div>
                 <img className="w-full" src={items.flag}></img>
             </div>

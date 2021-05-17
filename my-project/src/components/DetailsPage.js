@@ -2,12 +2,10 @@ import React, {useState, useEffect} from 'react';
 import CardDetails from './CardDetails';
 
 import { useParams } from "react-router-dom";
-  
 
 const DetailPage = () => {
 
     let { alpha3Code } = useParams();
-    console.log(alpha3Code);
 
     const [countryDetail, setCountryDetail] = useState({});
 
@@ -22,12 +20,9 @@ const DetailPage = () => {
         .catch(err => console.log(err))
     },[alpha3Code])
 
-
-    //console.log({countryDetail});
-    
     return (
         <>
-            {countryDetail ? (<CardDetails  countryInfo = {countryDetail} />) : (<div>Loding...</div>)}
+            {countryDetail ? (<CardDetails key = {countryDetail.alpha3Code} countryInfo = {countryDetail} />) : (<div>Loding...</div>)}
         </>
     );
 }

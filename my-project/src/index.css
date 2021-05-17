@@ -11,8 +11,8 @@
 }
 
 .light {
-    --color-bg-secondary: hsl(0, 0%, 98%);
-    --color-bg-primary:  hsl(0, 0%, 100%);
+    --color-bg-secondary:hsl(0, 0%, 100%) ;
+    --color-bg-primary:  hsl(0, 0%, 98%) ;
     --color-text-primary:  hsl(200, 15%, 8%);
 }
 

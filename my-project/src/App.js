@@ -45,21 +45,21 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mx-auto bg-secondary">
-      <div className = "flex flex-row justify-between items-center container mx-auto">
-        <div>
+    <div className="h-full mx-auto bg-secondary pb-8">
+      <div className = "md:flex justify-between items-center container mx-auto">
+        <div className="mx-6">
           <SearchBar 
             handleChange = {e => setTerm(e.target.value)}
           />
         </div>
-        <div className= "order-last">
+        <div className= "order-last mx-6">
           <FilterBox selectValue = {e => setValue(e.target.value)}/>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-6 container mx-auto">
+      <div className="grid p-6 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
       {country.filter(item => item.region.includes(filterValue))
       .filter(item => (item.name.toLowerCase().includes(term)))
-      .map(item => (
+      .map((item) => (
           <Link to={`/details/${item.alpha3Code}`} >
             <CountryCard key = {item.numericCode} {...item}/>
           </Link>
