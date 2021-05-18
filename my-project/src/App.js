@@ -60,8 +60,8 @@ const Home = () => {
       {country.filter(item => item.region.includes(filterValue))
       .filter(item => (item.name.toLowerCase().includes(term)))
       .map((item) => (
-          <Link to={`/details/${item.alpha3Code}`} >
-            <CountryCard key = {item.numericCode} {...item}/>
+          <Link key = {item.alpha3Code} to={`/details/${item.alpha3Code}`} >
+            <CountryCard  {...item}/>
           </Link>
       ))}
       </div>

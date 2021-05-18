@@ -7,7 +7,7 @@ const SearchBar = (input) => {
         <div className="py-6">
             <form className ="rounded h-full p-1 shadow-md bg-primary">
                 <FiSearch size = "1.5rem" color="grey" style = {{ margin: "1rem", display:"inline"}}/>
-                <input onChange={input.handleChange} className="bg-transparent border border-transparent rounded focus:outline-none " 
+                <input onChange={input.handleChange} className="bg-transparent text-primary border border-transparent rounded focus:outline-none " 
                     name = "country" placeholder="Search for a country..."></input>
             </form>
         </div>
