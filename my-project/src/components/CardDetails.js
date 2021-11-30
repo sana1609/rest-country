@@ -15,7 +15,7 @@ const CardDetails = ( {countryInfo} ) => {
                 <div className = 'flex-1 p-8'>
                     <img alt="country-flag" src = {flag}></img>
                 </div>
-                <div className = 'flex-1 p-6 '>
+                <div className='flex-1 p-6 '>
                     <h1 className='text-primary text-4xl p-6 font-bold'>{name}</h1>
                     <div className='md:flex'>
                         <div className="p-6">
@@ -28,9 +28,9 @@ const CardDetails = ( {countryInfo} ) => {
                         <div className='p-6'>
                             <p className="text-sm text-primary py-2"><span className="font-bold medium text-sm">Top Level Domain</span>: {topLevelDomain}</p>
                             <p className="text-sm text-primary py-2"><span className="font-bold medium text-sm">Languages
-                            </span>: { languages && languages.map((currency,index) => <span key={index}>{currency.name}</span>) }</p>
+                            </span>: { languages && languages.map((currency) => <span key={currency.name}>{currency.name }</span>) }</p>
                             <p className="text-sm text-primary py-2"><span className="font-bold medium text-sm">currencies
-                            </span>: {currencies && currencies.map((lang,index) => <span key={index}>{lang.name}</span>)}</p>
+                            </span>: {currencies && currencies.map((lang) => <span key={lang.name}>{lang.name}</span>)}</p>
                         </div>
                     </div>
                     <div className='p-6'>

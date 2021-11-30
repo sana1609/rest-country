@@ -9,11 +9,10 @@ const DetailPage = () => {
     const [countryDetail, setCountryDetail] = useState({});
 
     useEffect(() => {
-        fetch(`https://restcountries.eu/rest/v2/alpha/${alpha3Code}`)
+        fetch(`https://restcountries.com/v2//alpha/${alpha3Code}`)
         .then( res => res.json())
         .then(data => {
             setCountryDetail({...data});
-        
         })
         .catch(err => console.log(err))
     },[alpha3Code])
